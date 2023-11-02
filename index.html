@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Upload</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Upload Multiple Documents</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div id="fileInputs">
+                <input type="file" name="documents" multiple>
+            </div>
+            <button type="button" id="addFileInput" class="add-button">Add File</button>
+            <input type="submit" value="Upload" class="upload-button">
+        </form>
+    </div>
+    <script>
+        document.getElementById('addFileInput').addEventListener('click', () => {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.name = 'documents';
+            document.getElementById('fileInputs').appendChild(fileInput);
+        });
+    </script>
+</body>
+</html>
